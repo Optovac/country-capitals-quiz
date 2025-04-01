@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Capitals Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen">
+            <h1>Country Capitals Quiz</h1>
+            <p>Test your knowledge of world capitals!</p>
+            <div class="player-info">
+                <label for="player-initials">Enter your initials (2-3 letters):</label>
+                <input type="text" id="player-initials" maxlength="3" placeholder="ABC">
+            </div>
+            <button id="start-btn" class="btn">Start Quiz</button>
+            <button id="leaderboard-btn" class="btn">View Leaderboard</button>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <div class="header">
+                <div class="stats">
+                    <span id="question-number">Question: 1/10</span>
+                    <span id="score">Score: 0</span>
+                </div>
+                <div class="timer">
+                    <span id="time-remaining">Time: 15s</span>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h2 id="question">What is the capital of [Country]?</h2>
+                <div id="options-container" class="options-container">
+                    <!-- Options will be inserted here by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="feedback hidden" id="feedback">
+                <p id="feedback-text">Correct!</p>
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen hidden">
+            <h1>Quiz Complete!</h1>
+            <div class="results-container">
+                <p>Player: <span id="player-result"></span></p>
+                <p>Final Score: <span id="final-score"></span></p>
+                <p>Correct Answers: <span id="correct-answers"></span></p>
+                <p>Incorrect Answers: <span id="incorrect-answers"></span></p>
+            </div>
+            <button id="play-again-btn" class="btn">Play Again</button>
+            <button id="view-leaderboard-btn" class="btn">View Leaderboard</button>
+        </div>
+
+        <div id="leaderboard-screen" class="screen hidden">
+            <h1>Leaderboard</h1>
+            <div class="leaderboard-container">
+                <table id="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Score</th>
+                            <th>Correct</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-body">
+                        <!-- Leaderboard entries will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <button id="back-btn" class="btn">Back to Menu</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
